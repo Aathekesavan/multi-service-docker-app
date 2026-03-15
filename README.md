@@ -42,26 +42,39 @@ Database
 ---
 
 ## Project Structure
+frontend/
 
-multi-service-docker-app
-│
-├── frontend
-│   ├── Dockerfile
-│   └── src
-│       └── index.html
-├── backend
-│   ├── Dockerfile
-│   ├── app.py
-│   ├── requirements.txt
-│   └── .dockerignore
-├── nginx
-│   ├── Dockerfile
-│   └── nginx.conf
-├── scripts
-│   └── init-db.sql
-├── docker-compose.yml
-├── .gitignore
-└── README.md
+Dockerfile – Builds the frontend container
+
+src/index.html – User interface for the application
+
+backend/
+
+Dockerfile – Builds the backend container
+
+app.py – Flask API server
+
+requirements.txt – Python dependencies
+
+.dockerignore – Files ignored during Docker build
+
+nginx/
+
+Dockerfile – Builds the NGINX container
+
+nginx.conf – Reverse proxy configuration
+
+scripts/
+
+init-db.sql – Database initialization script
+
+Root files
+
+docker-compose.yml – Runs all containers together
+
+.gitignore – Files ignored by Git
+
+README.md – Project documentation
 ## How It Works
 
 1. The browser loads the frontend web page.
