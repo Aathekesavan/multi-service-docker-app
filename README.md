@@ -20,3 +20,7 @@ docker compose up --build
 
 Open:
 http://localhost
+
+## Application Preview
+
+![Application Screenshot](screenshots/app-preview.png)
