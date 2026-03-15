@@ -43,31 +43,25 @@ Database
 
 ## Project Structure
 
-
 multi-service-docker-app
 │
 ├── frontend
 │   ├── Dockerfile
 │   └── src
 │       └── index.html
-│
 ├── backend
 │   ├── Dockerfile
 │   ├── app.py
 │   ├── requirements.txt
 │   └── .dockerignore
-│
 ├── nginx
 │   ├── Dockerfile
 │   └── nginx.conf
-│
 ├── scripts
 │   └── init-db.sql
-│
 ├── docker-compose.yml
 ├── .gitignore
 └── README.md
-
 ## How It Works
 
 1. The browser loads the frontend web page.
