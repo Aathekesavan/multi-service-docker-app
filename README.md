@@ -1,103 +1,95 @@
-Multi-Service Docker Application
+# Multi-Service Docker Application
 
-A containerized web application demonstrating a multi-service architecture using Docker and Docker Compose.
+A containerized web application demonstrating a multi-service architecture using **Docker** and **Docker Compose**.
 
-The application includes a frontend UI, backend API, reverse proxy, and database, each running in its own container.
+The application includes a **frontend UI**, **backend API**, **reverse proxy**, and **database**, each running in its own container.
 
-Architecture
+---
 
-User Request → NGINX Reverse Proxy → Backend API → Database
+## Architecture
+
+**User Request → NGINX Reverse Proxy → Backend API → Database**
 
 NGINX routes incoming requests and connects the frontend with the backend service.
 
-Tech Stack
+---
 
-Frontend
+## Tech Stack
 
-HTML
+**Frontend**
+- HTML
+- NGINX
 
-NGINX
+**Backend**
+- Python
+- Flask
 
-Backend
+**Infrastructure**
+- Docker
+- Docker Compose
 
-Python
+**Database**
+- PostgreSQL
 
-Flask
+---
 
-Infrastructure
+## Project Structure
 
-Docker
+**frontend/**
+- `Dockerfile` – Builds the frontend container  
+- `src/index.html` – Application UI  
 
-Docker Compose
+**backend/**
+- `Dockerfile` – Builds the backend container  
+- `app.py` – Flask API server  
+- `requirements.txt` – Python dependencies  
 
-Database
+**nginx/**
+- `Dockerfile` – Builds the NGINX container  
+- `nginx.conf` – Reverse proxy configuration  
 
-PostgreSQL
+**scripts/**
+- `init-db.sql` – Database initialization script  
 
-Project Structure
+**Root Files**
+- `docker-compose.yml` – Runs all services together  
+- `README.md` – Project documentation  
 
-frontend/
+---
 
-Dockerfile – Builds the frontend container
+## Run the Project
 
-src/index.html – Application UI
-
-backend/
-
-Dockerfile – Builds the backend container
-
-app.py – Flask API server
-
-requirements.txt – Python dependencies
-
-nginx/
-
-Dockerfile – Builds the NGINX container
-
-nginx.conf – Reverse proxy configuration
-
-scripts/
-
-init-db.sql – Database initialization script
-
-Root Files
-
-docker-compose.yml – Runs all services together
-
-README.md – Project documentation
-
-Run the Project
-
-Prerequisites
-
-Docker
-
-Docker Compose
+**Prerequisites**
+- Docker
+- Docker Compose
 
 Start the application:
 
+```
 docker compose up --build
+```
 
-Open in browser:
+Open in your browser:
 
+```
 http://localhost
+```
 
-Click Call Backend API to test the backend connection.
+Click **Call Backend API** to test the backend connection.
 
-DevOps Concepts Demonstrated
+---
 
-Containerization with Docker
+## DevOps Concepts Demonstrated
 
-Multi-container architecture
+- **Containerization** with Docker  
+- **Multi-container architecture**  
+- **Reverse proxy** using NGINX  
+- **Backend API service**  
+- **Database initialization** with SQL scripts  
+- **Service orchestration** using Docker Compose  
 
-Reverse proxy using NGINX
+---
 
-Backend API service
+## Author
 
-Database initialization with SQL scripts
-
-Service orchestration with Docker Compose
-
-Author
-
-Developed by Aathe
+Developed by **Aathe**
