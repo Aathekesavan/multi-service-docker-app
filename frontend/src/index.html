@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Multi-Service Docker App</title>
+
+<style>
+
+body{
+  margin:0;
+  font-family:"Segoe UI", Arial, sans-serif;
+  background:linear-gradient(135deg,#667eea,#764ba2);
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.container{
+  background:white;
+  padding:40px;
+  width:420px;
+  border-radius:10px;
+  text-align:center;
+  box-shadow:0 12px 30px rgba(0,0,0,0.25);
+}
+
+h1{
+  margin-top:0;
+  font-weight:600;
+}
+
+.subtitle{
+  color:#555;
+  margin-bottom:25px;
+  font-size:15px;
+}
+
+button{
+  background:#667eea;
+  color:white;
+  border:none;
+  padding:12px 24px;
+  font-size:16px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#4f5dd9;
+}
+
+#result{
+  margin-top:20px;
+  font-size:18px;
+  font-weight:500;
+}
+
+.status{
+  margin-top:10px;
+  color:green;
+  font-size:14px;
+}
+
+.credit{
+  margin-top:30px;
+  font-size:13px;
+  color:#777;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Multi-Service Docker Application</h1>
+
+<p class="subtitle">
+Frontend | Backend | NGINX | PostgreSQL
+</p>
+
+<button onclick="getData()">Call Backend API</button>
+
+<p id="result"></p>
+
+<p class="status">System Ready</p>
+
+<p class="credit">Developed by Aathe</p>
+
+</div>
+
+<script>
+
+async function getData(){
+
+  const response = await fetch("/api")
+
+  const data = await response.json()
+
+  document.getElementById("result").innerText = data.message
+
+}
+
+</script>
+
+</body>
+
+</html>
