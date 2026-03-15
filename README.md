@@ -1,52 +1,46 @@
-# Multi-Service Docker Application
+Multi-Service Docker Application
 
 A containerized web application demonstrating a multi-service architecture using Docker and Docker Compose.
 
-This project includes a frontend UI, backend API, reverse proxy, and database, each running in its own container.
+The application includes a frontend UI, backend API, reverse proxy, and database, each running in its own container.
 
----
+Architecture
 
-## Architecture
+User Request → NGINX Reverse Proxy → Backend API → Database
 
-User Request
-↓
-NGINX Reverse Proxy
-↓
-Frontend (HTML UI)
-↓
-Backend API (Python Flask)
-↓
-PostgreSQL Database
+NGINX routes incoming requests and connects the frontend with the backend service.
 
-NGINX routes incoming requests to the appropriate service.
-
----
-
-## Tech Stack
+Tech Stack
 
 Frontend
-- HTML
-- NGINX
+
+HTML
+
+NGINX
 
 Backend
-- Python
-- Flask
+
+Python
+
+Flask
 
 Infrastructure
-- Docker
-- Docker Compose
+
+Docker
+
+Docker Compose
 
 Database
-- PostgreSQL
 
----
+PostgreSQL
 
-## Project Structure
+Project Structure
+
 frontend/
 
 Dockerfile – Builds the frontend container
 
-src/index.html – User interface for the application
+src/index.html – Application UI
 
 backend/
 
@@ -55,8 +49,6 @@ Dockerfile – Builds the backend container
 app.py – Flask API server
 
 requirements.txt – Python dependencies
-
-.dockerignore – Files ignored during Docker build
 
 nginx/
 
@@ -68,68 +60,44 @@ scripts/
 
 init-db.sql – Database initialization script
 
-Root files
+Root Files
 
-docker-compose.yml – Runs all containers together
-
-.gitignore – Files ignored by Git
+docker-compose.yml – Runs all services together
 
 README.md – Project documentation
-## How It Works
 
-1. The browser loads the frontend web page.
-2. When the user clicks **Call Backend API**, a request is sent to `/api`.
-3. NGINX receives the request and routes it to the backend container.
-4. The Flask backend processes the request and returns a response.
-5. The frontend displays the returned message.
+Run the Project
 
----
+Prerequisites
 
-## Running the Project
+Docker
 
-### Prerequisites
+Docker Compose
 
-- Docker
-- Docker Compose
-
-### Run the application
-
+Start the application:
 
 docker compose up --build
 
-
-Open the application in your browser:
-
+Open in browser:
 
 http://localhost
 
+Click Call Backend API to test the backend connection.
 
-Click **Call Backend API** to test the backend connection.
+DevOps Concepts Demonstrated
 
----
+Containerization with Docker
 
-## Containers Used
+Multi-container architecture
 
-| Container | Purpose |
-|--------|--------|
-| frontend | Serves the web UI |
-| backend | Python Flask API |
-| nginx | Reverse proxy and routing |
-| postgres | Database service |
+Reverse proxy using NGINX
 
----
+Backend API service
 
-## DevOps Concepts Demonstrated
+Database initialization with SQL scripts
 
-- Containerization with Docker
-- Multi-service architecture
-- Reverse proxy configuration
-- Environment variable configuration
-- Database initialization with SQL scripts
-- Service orchestration using Docker Compose
+Service orchestration with Docker Compose
 
----
+Author
 
-## Author
-
-Developed by **Aathe**
+Developed by Aathe
